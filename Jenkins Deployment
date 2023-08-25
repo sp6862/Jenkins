@@ -1,0 +1,163 @@
+STEPS TO DEPLOYMENT -
+CREATING DATA , BUILD TOOL , SERVER & PROJECT FOLDER
+INSTALLING MAVEN IN BUILD TOOL FOLDER
+SET UP THE PATH 
+INSTALLING GIT IN PROJECT
+CLONING GIT IN PROJECT 
+CLEAN PACKAGE MAVEN CALLING IN PROJECT 
+COPYING WAR FILE
+INSTALLING SERVER IN SERVER 
+COPY WAR FILES IN WEBAPPS
+STARTED SERVER IN BIN
+
+
+PRACTICAL -
+
+CREATING DATA , BUILD TOOL , SERVER & PROJECT FOLDER
+Sudo su
+Mkdir data
+Cd data
+Mkdir build tools
+Mkdir server
+Mkdir project
+Ls          WILL SHOW YOU 3 FOLDERS
+Cd build tool 
+
+INSTALLING MAVEN
+Wget https://dlcdn.apache.org/maven/maven-3/3.9.0/binaries/apache-maven-3.9.0-bin.tar.gz
+Ls
+Yum install java (PRESS TAAB TWICE A LIST WILL OPEN , SELECT 86.64 LINK)
+Yum install link
+Ls      WILL SHOW YOU APACHE IN RED  
+COPY THE APACHE MAVEN NAME
+Tar -xvf  paste name
+Ls         WILL SHOW YOU AM IN BLUE 
+Cd apache……
+Ls
+Cd bin/
+Pwd      WILL SHOW YOU FULL PATH
+Ls
+./mvn        BUILD FAILURE (MAVEN IS WORKING)
+
+SETTING UP THE PATH
+Cd
+Ls         WILL SHOW YOU .bash_profile
+vim      .bash_profile
+PATH = $PA………
+export MAVEN_HOME = PASTE PWD PATH U GOT
+Export PATH = $MAVEN_HOME/bin:$PATH
+SAVE THE FILE & EXIT
+
+INSTALLING GIT IN PROJECT
+Sudo su
+Exit
+Sudo su
+Ls
+Cd .m2/
+Ls
+Cd repository/
+Yum install git     (YOU CAN INSTALL IT ANYWHERE)
+
+CLONING GIT IN PROJECT
+Cd data
+Cd project
+Git clone paste code repo from github
+Ls           YOU CAN SEE YOUR CREATED REPO game-of-life
+Cd game-of-life
+Ls
+Cd game-of-life.web
+Ls
+Cd ../                 (game-of-life)
+
+CLEAN PACKAGE MAVEN CALLING IN PROJECT 
+mvn clean package
+Build servers
+WAR FILE IS CREATED
+
+COPYING WAR FILE IN SERVER
+Cd game-of-life
+Ls
+Cd game-of-life.web
+Ls
+Cd target
+Ls
+Game-of-life.war
+Pwd          COPY THE PATH
+Cd 
+Cd data/
+Cd server/
+CHROME TOMCAT DOWNLOAD COPY CORE ZIP LINK
+Wget paste link https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.73/bin/apache-tomcat-9.0.73.zip
+Ls        SHOW YOU TOMCAT IN RED
+Unzip   SHOW YOU TOMCAT IN BLUE
+COPY TOMCAT NAME
+Cd
+Ls
+Cd webapps/
+Ls
+HERE WE NEED TO BRING THAT WAR FILE BUT BEFORE IT WE NEED TO START SERVER
+Cd ../
+Chmod -R 744 PASTE apache tomcat name
+Cd PASTE NAME
+Cd bin/
+Ls     WILL SHOW YOU STARTUP.SH
+./startup.sh
+NOW THE SERVER STARTED
+LETS COPY WAR FILE
+cd../
+Cd webapps/
+Pwd
+cd/data/project
+Cd game-of-life
+Ls
+Cd game-of-life.web
+Ls
+Cd target
+Ls
+Cp -r game-of-life.war PASTE THE COPIED PATH OF SERVER
+cd../
+cd/data/server/apa tom
+Ls     WILL SHOW YOU COPIED WAR FILE
+NOW THE WAR FILE HAS BEEN COPIED
+
+GO TO INSTANCE
+COPY PUBLIC IP OF INSTANCE PASTE IT IN GOOGLE
+(SECURE HTTP,SSH & CUSTOME TCP 8080)
+PUT 8080 AFTER PUBLIC IP & GIVE .IN
+PIP:8080/GAME-OF-LIFE.IN***/
+INSTALLING JENKINS VIA WAR FILE
+CREATE INSTANCE 
+CONNECT IT WITH LINUX
+Sudo su
+Cd /
+Yum update -y      TO UPDATE SOFTWARES
+Yum install java       (86.)
+Mkdir server
+Cd server/
+Wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.73/bin/apache-tomcat-9.0.73.zip
+INSTALL TOMCAT
+Ls    WILL SHOW YOU TOMCAT IN RED COPY THE NAME
+Unzip tomcat
+Ls    WILL SHOW YOU TOMCAT IN BLUE
+Cd PASTE NAME 
+Ls
+Cd webapps/
+Ls
+CHROME - JENKINS WAR FILE DOWNLOAD 2.379
+WGET PASTE LINK
+https://updates.jenkins.io/download/war/2.394/jenkins.war
+Ls          WILL SHOW YOU WAR FILE
+Cd ../      (webapps)
+Cd ../      (server)
+Ls
+Chmod -r 744 APACHE TOMCAT NAME
+Cd APACHE TOMCAT NAME
+Ls
+Cd bin/
+.startup.sh  (TOMCAT STARTED)
+CHROME - Public IP.8080/jenkins
+INSTALL SUGGESTED PLUGINS
+ENTRE DETAILS
+YOU WILL GET YOUR JENKINS URL
+WHENEVER YOU TERMINATE AND START YOUR INSTANCE PLEASE SET ELASTIC IP SO THAT YOUR JENKINS URL WONT BE CHANGED
+SAVE & FININSH
